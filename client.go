@@ -2,10 +2,12 @@ package main
 
 import (
 	"bytes"
-	"github.com/gorilla/websocket"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/gorilla/websocket"
 )
 
 const (
@@ -115,6 +117,7 @@ func ServeWs(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		return
 	}
+	fmt.Println("roomId = ", roomId)
 	// create a connection and subscribe to that room
 	c := &connection{send: make(chan []byte, 256), ws: ws}
 	s := subscription{c, roomId}

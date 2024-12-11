@@ -7,9 +7,9 @@ import "fmt"
 func Roshambo(firstPlayerMove string, secondPlayerMove string) string {
 	moveWinAgainstMap := make(map[string]string)
 
-	moveWinAgainstMap["scissor"] = "paper"
+	moveWinAgainstMap["scissors"] = "paper"
 	moveWinAgainstMap["paper"] = "rock"
-	moveWinAgainstMap["rock"] = "scissor"
+	moveWinAgainstMap["rock"] = "scissors"
 
 	firstPlayerWinAgainst, firstInputValid := moveWinAgainstMap[firstPlayerMove]
 	secondPlayerWinAgainst, secondInputValid := moveWinAgainstMap[secondPlayerMove]
